@@ -1,0 +1,17 @@
+<!DOCTYPE html>                                                                                                                                                                                                                   
+  <html lang="no">                                                                                                                                                                                                                  
+  <head><meta charset="utf-8"><title>Tesla Auth</title>
+  <style>body{font-family:sans-serif;max-width:600px;margin:60px auto;padding:0 20px}                                                                                                                                               
+  code{display:block;background:#f0f0f0;padding:16px;font-size:1.1em;word-break:break-all;border-radius:6px;margin:12px 0}</style>                                                                                                  
+  </head>                                                                                                                                                                                                                           
+  <body>                                                                                                                                                                                                                            
+  <h2>Tesla autorisasjonskode</h2>                                                                                                                                                                                                  
+  <p>Kopier koden under og lim den inn i terminalen:</p>    
+  <code id="code">Laster...</code>                                                                                                                                                                                                  
+  <script>                                                                                                                                                                                                                          
+  const code = new URLSearchParams(location.search).get('code');                                                                                                                                                                    
+  document.getElementById('code').textContent = code || 'Ingen kode funnet i URL.';                                                                                                                                                 
+  if(code) navigator.clipboard?.writeText(code);                                                                                                                                                                                    
+  </script>                                                                                                                                                                                                                         
+  </body>                                                                                                                                                                                                                           
+  </html>                                 
